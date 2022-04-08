@@ -11,7 +11,7 @@ public class ControlOp_For09 {
         //입력양식
         //입력1: XX
         //입력2: XX
-        //...
+        //  ...
         //입력10: XX
 
         //출력양식
