@@ -23,12 +23,13 @@ public class ControlOp_For09 {
             num= sc.nextInt();
             if (num==0) {
                 System.out.printf("입력한 정수들의 합계 : %d\n",sum);
+                System.out.printf("입력한 정수들의 평균 : %.1f\n",(double)sum/(i-1));
                 break;
             }
             sum+=num;
             if (i==10){
                 System.out.printf("입력한 정수들의 합계 : %d\n",sum);
-                System.out.printf("입력한 정수들의 평균 : %.1f\n",sum/10.0);
+                System.out.printf("입력한 정수들의 평균 : %.1f\n",(double)sum/i);
             }
         }
 
