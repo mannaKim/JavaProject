@@ -39,28 +39,28 @@ public class ControlOp_while01 {
 
         //while 사용 예시
         Scanner sc = new Scanner(System.in);
-        System.out.printf("\n메뉴선택 : 1(저장), 2(불러오기), 3(종료): ");
+        System.out.print("\n메뉴선택 : 1(저장), 2(불러오기), 3(종료): ");
         int input=sc.nextInt();
         while(input!=3){
             switch(input){
-                case 1:System.out.printf("저장했습니다."); break;
-                case 2:System.out.printf("불러왔습니다."); break;
+                case 1:System.out.print("저장했습니다."); break;
+                case 2:System.out.print("불러왔습니다."); break;
             }
-            System.out.printf("\n메뉴선택 : 1(저장), 2(불러오기), 3(종료): ");
+            System.out.print("\n메뉴선택 : 1(저장), 2(불러오기), 3(종료): ");
             input=sc.nextInt();
         }
-        System.out.printf("프로그램을 종료합니다.\n");
+        System.out.print("프로그램을 종료합니다.\n");
         //----------------------------------------------
         while(true){
-            System.out.printf("\n메뉴선택 : 1(저장), 2(불러오기), 3(종료): ");
+            System.out.print("\n메뉴선택 : 1(저장), 2(불러오기), 3(종료): ");
             input=sc.nextInt();
             if(input==3) {
-                System.out.printf("프로그램을 종료합니다.\n");
+                System.out.print("프로그램을 종료합니다.\n");
                 break;
             }
             switch(input){
-                case 1:System.out.printf("저장했습니다."); break;
-                case 2:System.out.printf("불러왔습니다."); break;
+                case 1:System.out.print("저장했습니다."); break;
+                case 2:System.out.print("불러왔습니다."); break;
             }
         }
         System.out.println();

@@ -10,10 +10,10 @@ public class ControlOp_while03 {
         Scanner sc=new Scanner(System.in);
         int dan;
         while(true){
-            System.out.printf("출력할 단을 입력하세요. (0 입력시 종료): ");
+            System.out.print("출력할 단을 입력하세요. (0 입력시 종료): ");
             dan=sc.nextInt();
             if(dan==0){
-                System.out.printf("----구구단 출력 종료----");
+                System.out.print("----구구단 출력 종료----");
                 break;
             }
             for(int i=1;i<=9;i++){
