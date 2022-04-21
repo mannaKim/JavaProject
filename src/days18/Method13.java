@@ -2,7 +2,7 @@ package days18;
 
 public class Method13 {
     public static void main(String[] args) {
-        int [] a = {56,87,96,59,25,25,48,13,33,65,77,12,49};
+        int [] a = {56,87,96,59,25,25,48,13,33,65,77,12,49,3};
         int tot;
         double ave;
         tot=sum(a); //배열의 합계를 계산하여 리턴하는 메서드
