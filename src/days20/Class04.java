@@ -1,4 +1,8 @@
 package days20;
+
+import java.util.Random;
+import java.util.Scanner;
+
 class Std {
     private int num;
     private String name;
@@ -19,7 +23,6 @@ class Std {
         System.out.printf("%2d\t%3s\t%3d\t%3d\t%3d\t%3d\t%.2f\n",
                 num,name,kor,eng,mat,tot,ave);
     }
-
 }
 public class Class04 {
     public static void main(String[] args) {
@@ -28,6 +31,8 @@ public class Class04 {
 
         s1.input(1,"홍길동",88,77,99);
         s2.input(2,"홍길서",89,98,78);
+        //private 로 변수들을 선언해서
+        //s2.num=3; 같은 명령이 불가함.
 
         System.out.println("\t\t   ===성적표===");
         System.out.println("----------------------------------");
@@ -36,5 +41,10 @@ public class Class04 {
         s1.prn();
         s2.prn();
         System.out.println("----------------------------------");
+
+        //Scanner sc = new Scanner(System.in);
+        //int a = sc.nextInt(); <--nextInt()는 Scanner 의 멤버메서드
+        //Random rd = new Random();
+        //int b = rd.nextInt(); <--nextInt()는 Random 의 멤버메서드
     }
 }
