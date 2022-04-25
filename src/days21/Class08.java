@@ -1,5 +1,7 @@
 package days21;
 
+// Getter 와 Setter 만들기
+
 class Student {
     int bunho;
     String name;
