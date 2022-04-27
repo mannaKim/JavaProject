@@ -6,7 +6,10 @@ class Complex {
     int image;
 
     void prn() {
-        System.out.println(real+"+"+image+"i");
+        if (image>0&&image!=1) System.out.println(real+"+"+image+"i");
+        else if (image==1) System.out.printf("%d+i\n",real);
+        else if (image==-1) System.out.printf("%d-i\n",real);
+        else System.out.printf("%d%di\n",real,image);
     }
     public Complex(){ }
     public Complex(int real, int image) {
@@ -36,7 +39,7 @@ public class Class18 {
         c2.prn();
         System.out.println();
 
-        Complex c3 = new Complex();
+        Complex c3; //= new Complex();
         c3=c1.add(c2);
         c1.prn();
         c2.prn();
