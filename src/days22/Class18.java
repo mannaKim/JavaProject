@@ -16,7 +16,7 @@ class Complex {
         this.real = real;
         this.image = image;
     }
-    public Complex add(Complex c) {
+    public Complex add(Complex c/*,(생략된 매개변수)Complex this*/) {
         Complex temp = new Complex();
         temp.real = this.real+c.real;
         temp.image = this.image+c.image;
