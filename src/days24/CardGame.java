@@ -3,7 +3,9 @@ package days24;
 class CardDeck {
     private Card [] cards = new Card[52]; //카드 52장이 저장될 배열, 참조변수값을 저장하는 배열로 사용
     public CardDeck() {
-        //cards[0]=new Card(Card.clover,1); ... cards[51]=new Card(Card.spade,13); 할당
+        //cards[0]=new Card(Card.clover,1);
+        // ...
+        //cards[51]=new Card(Card.spade,13); 할당
         int cardNum=0;
         for (int kind=1;kind<=4;kind++) {
             for (int num=1;num<=13;num++){
@@ -38,12 +40,33 @@ public class CardGame {
         System.out.printf("%s ",d.cardPick(3));
         System.out.printf("%s ",d.cardPick(4));
          */
-        Card [] p1 = new Card[5];
+
+        //현재 프로그램을 1인당 카드 7장, 플레이어 5명으로 늘려서 카드를 골고루 분배하고
+        //플래이어 1명당 한 줄에 분배된 카드를 출력
+        Card [] p1 = new Card[7];
+        Card [] p2 = new Card[7];
+        Card [] p3 = new Card[7];
+        Card [] p4 = new Card[7];
+        Card [] p5 = new Card[7];
         int k=0;
-        for (int i=0;i<5;i++){
-            p1[i]=d.cardPick(k++);
+        for (int i=0;i<7;i++) {
+            p1[i] = d.cardPick(k++);
+            p2[i] = d.cardPick(k++);
+            p3[i] = d.cardPick(k++);
+            p4[i] = d.cardPick(k++);
+            p5[i] = d.cardPick(k++);
         }
-        for (int i=0;i<5;i++) System.out.printf("%s ",p1[i]);
+        for (int i=0;i<7;i++) {System.out.printf("%s\t",p1[i]);}
+        System.out.println();
+        for (int i=0;i<7;i++) {System.out.printf("%s\t",p2[i]);}
+        System.out.println();
+        for (int i=0;i<7;i++) {System.out.printf("%s\t", p3[i]);}
+        System.out.println();
+        for (int i=0;i<7;i++) {System.out.printf("%s\t",p4[i]);}
+        System.out.println();
+        for (int i=0;i<7;i++) {System.out.printf("%s\t",p5[i]);}
+        System.out.println();
+
         /*
         Card c = new Card(Card.clover,11);
         System.out.println(c.toString());

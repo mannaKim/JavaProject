@@ -21,7 +21,7 @@ public class Card {
 
     public String toString() { //무늬와 숫자를 String 으로 리턴해주는 멤버메서드
         //ex) kind:4, number:13 이면 문자열 "[Spade:K]"를 반환하는 메서드
-        String [] kinds = {"","♣","♥","◆","♠"};
+        String [] kinds = {"","♣","♥","\uD83D\uDD36","♠"};
         String [] numbers = {"","A","2","3","4","5","6","7","8","9","10","J","Q","K"};
         //String result = "["+kinds[kind]+":"+numbers[number]+"]";
         return "["+kinds[kind]+":"+numbers[number]+"]";
