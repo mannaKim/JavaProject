@@ -16,7 +16,7 @@ class Dog extends Animal {
         System.out.println("멍멍~!");
     }
     public void crying() {
-        super.crying();
+        //super.crying();
         System.out.println("멍멍~!");
     }
 }
@@ -35,6 +35,8 @@ public class Extends07 {
         Cat c = new Cat();
         d.crying(); d.sound();
         c.crying(); c.sound();
+        //d.super.crying();  <-- 에러
+        //부모의 메서드를 사용하려면 반드시 자식의 메서드에서 super 를 이용해 호출
     }
 }
 // 메소드 오버라이딩
