@@ -1,6 +1,7 @@
 package days28;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 public class Formatter01 {
@@ -37,6 +38,30 @@ public class Formatter01 {
         // s : 초를 표시하는 자리수 문자
         // S : 밀리초를 표시하는 자리수 문자
         // a : 오전/오후를 표시하는 자리수 문자
+
+        sdf5 = new SimpleDateFormat("오늘은 올 해의 D번째 날입니다.");
+        sdf6 = new SimpleDateFormat("오늘은 이 달의 d번째 날입니다.");
+        sdf7 = new SimpleDateFormat("오늘은 올 해의 w번째 주입니다.");
+        sdf8 = new SimpleDateFormat("오늘은 이 달의 W번째 주입니다.");
+        sdf9 = new SimpleDateFormat("오늘은 이 달의 F번째 E요일 입니다.");
+
+        System.out.println(sdf5.format(today));
+        System.out.println(sdf6.format(today));
+        System.out.println(sdf7.format(today));
+        System.out.println(sdf8.format(today));
+        System.out.println(sdf9.format(today));
+
+        Calendar cal = Calendar.getInstance();
+        Date day = cal.getTime(); //Calendar 객체의 현재 날짜값을 Date 값으로 변환
+        sdf1 = new SimpleDateFormat("yyyy-MM-dd");
+        sdf2 = new SimpleDateFormat("yyyy-MM-dd E요일");
+        sdf3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
+        sdf4 = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss a");
+
+        System.out.println(sdf1.format(day)); //format(Date d)
+        System.out.println(sdf2.format(day));
+        System.out.println(sdf3.format(day));
+        System.out.println(sdf4.format(day));
 
     }
 }
