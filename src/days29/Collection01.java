@@ -26,7 +26,7 @@ package days29;
 //4. Map 타입의 저장방법을 구현하고 있는 클래스들
 //Map 타입 : 데이터를 Key 와 Value 형태로 저장하는 방법
 //          검색을 위해서 사용, Key 의 값은 중복 허용하지 않음, Value 는 중복 허용
-// - HashTable, HashMap(가장 많이 사용)
+// - Hashtable, HashMap(가장 많이 사용)
 
 //5. Vector, ArrayList 클래스
 // - 두 개의 클래스는 동일한 기능을 제공
