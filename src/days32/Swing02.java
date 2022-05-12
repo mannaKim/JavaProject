@@ -5,20 +5,34 @@ import java.awt.*;
 
 class ButtonTest2 extends JFrame {
     ButtonTest2() {
+        JButton b0 = new JButton("0"); JButton b1 = new JButton("1");
+        JButton b2 = new JButton("2"); JButton b3 = new JButton("3");
+        JButton b4 = new JButton("4"); JButton b5 = new JButton("5");
+        JButton b6 = new JButton("6"); JButton b7 = new JButton("7");
+        JButton b8 = new JButton("8"); JButton b9 = new JButton("9");
+
+        JButton b10 = new JButton("+");
+        JButton b11 = new JButton("-");
+        JButton b12 = new JButton("×");
+        JButton b13 = new JButton("÷");
+        JButton b14 = new JButton("C");
+        JButton b15 = new JButton("=");
+
+
         Container con = getContentPane();
         con.setLayout(new FlowLayout());
 
-        con.add(new JButton("7")); con.add(new JButton("8"));
-        con.add(new JButton("9")); con.add(new JButton("＋"));
+        con.add(b7); con.add(b8);
+        con.add(b9); con.add(b10);
 
-        con.add(new JButton("4")); con.add(new JButton("5"));
-        con.add(new JButton("6")); con.add(new JButton("－"));
+        con.add(b4); con.add(b5);
+        con.add(b6); con.add(b11);
 
-        con.add(new JButton("1")); con.add(new JButton("2"));
-        con.add(new JButton("3")); con.add(new JButton("×"));
+        con.add(b1); con.add(b2);
+        con.add(b3); con.add(b12);
 
-        con.add(new JButton("＝")); con.add(new JButton("0"));
-        con.add(new JButton("C")); con.add(new JButton("÷"));
+        con.add(b15); con.add(b0);
+        con.add(b14); con.add(b13);
 
         setTitle("버튼 컴퍼넌트 테스트"); //윈도우의 좌측 상단에 표시된 타이틀
         setSize(220,200); //윈도우 크기 설정:단위(픽셀)
