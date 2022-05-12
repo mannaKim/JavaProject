@@ -35,7 +35,7 @@ class ThreadB2 extends Thread {
         for(int i=1;i<=10;i++) {
             System.out.printf("ThreadB2 : i -> %d\n",i);
             try {
-                Thread.sleep(500);
+                sleep(500);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -57,7 +57,7 @@ public class Thread02 {
         for(int i=1;i<=10;i++) {
             System.out.printf("main : i -> %d\n",i);
             try {
-                Thread.sleep(500); //실행을 잠시(0.5s)동안 멈춤
+                Thread.sleep(500);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
