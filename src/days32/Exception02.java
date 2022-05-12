@@ -24,9 +24,8 @@ public class Exception02 {
 
         //Exception 객체들(ArithmeticException, RuntimeException 등)의 상위클래스 Exception
         //Exception e 는 모두를 포함-수용하는 최상위 예외 클래스이며, 다중 예외 처리시 가장 마지막에 위치시킨다.
-        //다중 예외처리의 표현시 Exception 이 가장 위에 있으면, 아래에 위치한 세부적인 예외처리에 순서가 한번도 돌아가지 못하고
+        //다중 예외 처리의 표현시 Exception 이 가장 위에 있으면, 아래에 위치한 세부적인 예외처리에 순서가 한번도 돌아가지 못하고
         //Exception 에서 모든 예외가 처리된다.
-
 
     }
 }
