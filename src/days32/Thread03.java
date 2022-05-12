@@ -1,6 +1,5 @@
 package days32;
 
-
 import javax.swing.*;
 
 class ThreadC1 extends Thread {
