@@ -26,8 +26,8 @@ public class Exception05 {
         // parse 예외처리 방법#2
         // 잘못된 포멧으로 입력하면 다시 입력하라고 하는 예외처리
         Scanner sc = new Scanner(System.in);
-        String inString = "";
-        Date inDate = null;
+        String inString;
+        Date inDate;
         System.out.print("날짜를 예시와 같이 입력해주세요. (예시:2015-12-31) : ");
         while(true) {
             try {

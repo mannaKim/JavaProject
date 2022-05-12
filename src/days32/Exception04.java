@@ -28,7 +28,7 @@ public class Exception04 {
     //라고 메서드에 꼬리표(throws Exception)를 붙인다.
 
     private static void method2() throws Exception{
-        throw new Exception();  //강제 예외 발생 - 예외가 발생할테니 처리하라는 의미의 빨간줄(?)
+        throw new Exception();  //강제 예외 발생 - 예외가 발생할테니 처리하라는 의미의 빨간줄
 
         //현재 예외처리를 해결하는 방법#1
         /*try {
