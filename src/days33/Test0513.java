@@ -43,7 +43,7 @@ public class Test0513 {
         ClassSub2 cs2 = new ClassSub2();
         test1(cs1);
         //test1(cs2);
-        test2(cs1);
+        //test2(cs1);
         test2(cs2);
 
         Date today = new Date();
@@ -53,9 +53,9 @@ public class Test0513 {
         System.out.println(file_name);
 
         }
-    private static void test1(ClassSub1 cs1) {
+    private static void test1(InterSuper1 cs1) {
     }
-    private static void test2(InterSuper1 cs2) {
+    private static void test2(InterSub cs2) {
     }
 }
 
