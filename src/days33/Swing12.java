@@ -29,16 +29,18 @@ class Calculator extends JFrame implements ActionListener {
         JPanel p3 = new JPanel();
         JPanel p4 = new JPanel();
         JPanel p5 = new JPanel();
+        JPanel p6 = new JPanel();
 
-        con.setLayout(new GridLayout(5,1));
+        con.setLayout(new GridLayout(6, 1));
         p1.setLayout(new FlowLayout(FlowLayout.CENTER)); //텍스트필드가 패널의 가운데에 위치하도록 설정
-        p2.setLayout(new GridLayout(1,4));
-        p3.setLayout(new GridLayout(1,4));
-        p4.setLayout(new GridLayout(1,4));
-        p5.setLayout(new GridLayout(1,4));
+        p2.setLayout(new GridLayout(1, 4));
+        p3.setLayout(new GridLayout(1, 4));
+        p4.setLayout(new GridLayout(1, 4));
+        p5.setLayout(new GridLayout(1, 4));
+        p6.setLayout(new GridLayout(1, 4));
 
         jt = new JTextField(15);
-        Font f = new Font("굴림",Font.BOLD,20);
+        Font f = new Font("굴림", Font.BOLD, 20);
         jt.setFont(f); //<-- 버튼도 폰트 적용 가능
         jt.setText("0");
         jt.setHorizontalAlignment(SwingConstants.RIGHT); //텍스트 필드안에 쓰여지는 숫자(글자)들의 오른쪽 정렬
@@ -56,28 +58,39 @@ class Calculator extends JFrame implements ActionListener {
         JButton bClear = new JButton("C");
         JButton bEqual = new JButton("=");
 
+        JButton back = new JButton("◀");
+        JButton sqr = new JButton("sqr");
+        JButton divide1 = new JButton("1/x");
+        JButton bn = new JButton("%");
+
         b0.setFont(f); b1.setFont(f); b2.setFont(f); b3.setFont(f); b4.setFont(f);
         b5.setFont(f); b6.setFont(f); b7.setFont(f); b8.setFont(f); b9.setFont(f);
         bPlus.setFont(f); bMinus.setFont(f); bMulti.setFont(f); bDivide.setFont(f);
-        bClear.setFont(f); bEqual.setFont(f);
+        bClear.setFont(f); bEqual.setFont(f); back.setFont(f); sqr.setFont(f);
+        divide1.setFont(f); bn.setFont(f);
 
         p1.add(jt);
         p2.add(b7); p2.add(b8); p2.add(b9); p2.add(bPlus);
         p3.add(b4); p3.add(b5); p3.add(b6); p3.add(bMinus);
         p4.add(b1); p4.add(b2); p4.add(b3); p4.add(bMulti);
         p5.add(bClear); p5.add(b0); p5.add(bEqual); p5.add(bDivide);
-        con.add(p1); con.add(p2); con.add(p3); con.add(p4); con.add(p5);
+        p6.add(back); p6.add(sqr); p6.add(divide1); p6.add(bn);
+        con.add(p1); con.add(p2); con.add(p3); con.add(p4); con.add(p5); con.add(p6);
 
         //각 버튼들에 액션리스너를 다 붙이고, 버튼 클릭시 해당 숫자가 텍스트 필드에 표시되도록 코딩
-        b0.addActionListener(this); b1.addActionListener(this); b2.addActionListener(this);
-        b3.addActionListener(this); b4.addActionListener(this);
-        b5.addActionListener(this); b6.addActionListener(this); b7.addActionListener(this);
+        b0.addActionListener(this); b1.addActionListener(this);
+        b2.addActionListener(this); b3.addActionListener(this);
+        b4.addActionListener(this); b5.addActionListener(this);
+        b6.addActionListener(this); b7.addActionListener(this);
         b8.addActionListener(this); b9.addActionListener(this);
-        bPlus.addActionListener(this); bMinus.addActionListener(this); bMulti.addActionListener(this);
-        bDivide.addActionListener(this); bClear.addActionListener(this); bEqual.addActionListener(this);
+        bPlus.addActionListener(this); bMinus.addActionListener(this);
+        bMulti.addActionListener(this); bDivide.addActionListener(this);
+        bClear.addActionListener(this); bEqual.addActionListener(this);
+        back.addActionListener(this); sqr.addActionListener(this);
+        divide1.addActionListener(this); bn.addActionListener(this);
 
         setTitle("계산기");
-        setSize(300,350);
+        setSize(300, 350);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
     }
@@ -86,8 +99,9 @@ class Calculator extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         String s = e.getActionCommand();
         String oldText = jt.getText();
-        if (oldText.equals("0")) oldText="";
-        /*switch(s) {
+        if (oldText.equals("0")) oldText = "";
+        /*
+        switch(s) {
             case "0" : jt.setText(oldText+"0"); break;
             case "1" : jt.setText(oldText+"1"); break;
             case "2" : jt.setText(oldText+"2"); break;
@@ -100,53 +114,81 @@ class Calculator extends JFrame implements ActionListener {
             case "9" : jt.setText(oldText+"9"); break;
         }*/
         switch (s) {
-            case "+" :
+            case "+":
                 operator = 1;
                 firstNumber = Integer.parseInt(jt.getText());
                 jt.setText("0");
                 break;
-            case "-" :
+            case "-":
                 operator = 2;
                 firstNumber = Integer.parseInt(jt.getText());
                 jt.setText("0");
                 break;
-            case "×" :
+            case "×":
                 operator = 3;
                 firstNumber = Integer.parseInt(jt.getText());
                 jt.setText("0");
                 break;
-            case "÷" :
+            case "÷":
                 operator = 4;
                 firstNumber = Integer.parseInt(jt.getText());
                 jt.setText("0");
                 break;
-            case "C" :
+            case "%":
+                operator = 5;
+                firstNumber = Integer.parseInt(jt.getText());
                 jt.setText("0");
                 break;
-            case "=" :
+            case "C":
+                jt.setText("0");
+                break;
+            case "=":
                 secondNumber = Integer.parseInt(jt.getText());
                 switch (operator) {
                     case 1:
-                        result1 = firstNumber+secondNumber;
+                        result1 = firstNumber + secondNumber;
                         jt.setText(String.valueOf(result1));
                         break;
                     case 2:
-                        result1 = firstNumber-secondNumber;
+                        result1 = firstNumber - secondNumber;
                         jt.setText(String.valueOf(result1));
                         break;
                     case 3:
-                        result1 = firstNumber*secondNumber;
+                        result1 = firstNumber * secondNumber;
                         jt.setText(String.valueOf(result1));
                         break;
                     case 4:
-                        result2 = firstNumber/(double)secondNumber;
+                        result2 = firstNumber / (double) secondNumber;
                         jt.setText(String.valueOf(result2));
+                        break;
+                    case 5:
+                        result1 = firstNumber % secondNumber;
+                        jt.setText(String.valueOf(result1));
                         break;
                 }
                 break;
+            case "◀":
+                //substring() 과 length() 활용하여 백스페이스 키를 완성하기
+                //맨왼쪽(첫글자)부터 마지막글자 바로 전 글자까지 getting 한다.
+                String presentText = jt.getText();
+                if (presentText.length() == 1) jt.setText("0");
+                else jt.setText(presentText.substring(0, presentText.length() - 1));
+                break;
+            case "sqr":
+                //현재 텍스트필드에 있는 숫자의 제곱근 구하고 다시 텍스트필드에 넣기
+                if (jt.getText().equals("0")) break;
+                double sqr = Math.sqrt(Integer.parseInt(jt.getText()));
+                jt.setText(String.valueOf(sqr));
+                break;
+            case "1/x":
+                //1 나누기 텍스트필드 숫자의 결과를 텍스트필드에 넣기
+                if (jt.getText().equals("0")) break;
+                double divide1 = 1 / Double.parseDouble(jt.getText());
+                jt.setText(String.valueOf(divide1));
+                break;
             case "0": case "1": case "2": case "3": case "4":
-                case "5": case "6": case "7": case "8": case "9":
-                    jt.setText(oldText + s);
+            case "5": case "6": case "7": case "8": case "9":
+                jt.setText(oldText + s);
         }
 
     }
